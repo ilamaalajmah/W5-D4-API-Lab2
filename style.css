@@ -1,27 +1,30 @@
-    body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #222831;
+    background-color: #000000;
 }
-
 h1 {
     text-align: center;
     color: white;
-    font-size: 50px;
+    font-size: 3rem;
 }
 
 form {
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
+    align-items: center; 
     margin-bottom: 20px;
 }
-input[type="text"], input[type="url"] {
+
+input[type="text"],input[type="url"] {
     padding: 10px;
-    margin: 0 10px;
+    margin: 10px 0; 
+    outline: none;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 250px;
+    width: 100%; 
+    max-width: 250px; 
 }
 
 button {
@@ -46,20 +49,49 @@ button:hover {
 .image-item {
     margin: 15px;
     padding: 10px;
-    background-color: rgb(247, 241, 241);
+    background-color: rgb(0, 0, 0);
     border-radius: 10px;
     text-align: center;
-    width: 180px;
+    width: 100%; 
+    max-width: 500px; 
+    box-sizing: border-box; 
 }
 
 .image-item p {
-    font-size: 16px;
-    color: #333;
+    font-size: 3rem; 
+    color: #ffffff;
     font-weight: 800;
 }
 
 .image-item img {
-    width: 150px;
-    height: 150px;
+    width: 100%; 
+    height: auto; 
     border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem; 
+    }
+    
+    .image-item {
+        width: 100%; 
+        max-width: 400px; 
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem; 
+ }
+
+    #container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    
+    .image-item {
+        width: 100%; 
+        max-width: 500px;
+    }
 }
